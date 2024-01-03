@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blowing up a balloon</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h1>Blowing up a balloon</h1>
+    <p>🎈</p>
+
+    <script>
+      "💥";
+      var balloon = document.querySelector("p");
+      var size = 10;
+    // function key(event){
+      //   if (event.key === "ArrowUp"){
+      //     size += 10;
+      //   }else if (event.key === "ArrowDown") {
+      //     size -= 10;
+      //   }
+
+      function key(event){
+      if (event.which === 38){
+        size += 10;
+      }else if (event.which === 40) {
+        size -= 10;
+      }
+      balloonGrow()
+      }
+       document.addEventListener("keydown", key);
+
+
+      function balloonGrow(){
+        balloon.style.fontSize = size + "px";
+        if(size > 100){
+          balloon.innerHTML = "💥";
+          balloon.style.fontSize = "100px";
+          setTimeout(function() {
+            balloon.style.display = "none";
+          }, 2000);
+        }
+      }
+    
+
+    </script>
+  </body>
+</html>
